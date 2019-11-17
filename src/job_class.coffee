@@ -316,7 +316,9 @@ class Job
   @forever = 9007199254740992
 
   # This is the maximum date value in JS
-  @foreverDate = new Date 8640000000000000
+  #@foreverDate = new Date 8640000000000000
+  #Change to the year 9998. mongo-connector has problems parsing the date and throws "bson.errors.InvalidBSON: year 275760 is out of range" (the above date translates to ISODate("275760-09-12T20:00:00.000-04:00")).
+  @foreverDate = new Date 253370764740000
 
   @jobPriorities:
     low: 10
